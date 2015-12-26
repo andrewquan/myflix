@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user
-    redirect_to root_path if !current_user
+    redirect_to sign_in_path if !current_user
   end
 end

@@ -2,8 +2,9 @@ require 'spec_helper'
 
 describe Category do
   it { should have_many(:videos).order("title") }
+  it { should validate_presence_of(:name) }
 
-  describe "recent_videos" do
+  describe "#recent_videos" do
     it "returns videos in reverse chronological order by created_at" do
       comedy = Category.create(name: "Comedy")
       futurama = Video.create(title: "Futurama", description: "Space travel.", category: comedy, created_at: 1.day.ago)
