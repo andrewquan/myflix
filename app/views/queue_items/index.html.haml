@@ -21,7 +21,7 @@
                   %td= text_field_tag 'queue_items[][position]', queue_item.position
                   %td= link_to queue_item.video_title, video_path(queue_item.video)
                   %td= button_to "Play", nil, class: "btn btn-default"
-                  %td= queue_item.rating
+                  %td= select_tag 'queue_items[][rating]', options_for_video_rating(queue_item.rating), include_blank: true
                   %td= link_to queue_item.category_name, category_path(queue_item.video.category)
                   %td
                     = link_to queue_item_path(queue_item), method: :delete do
