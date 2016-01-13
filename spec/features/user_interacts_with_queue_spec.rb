@@ -28,8 +28,7 @@ feature "User interacts with the queue" do
   end
 
   def add_video_to_queue(video)
-    visit home_path
-    find("a[href='/videos/#{video.id}']").click
+    visit_video_page_from_home_page(video)
     click_link "+ My Queue"
   end
 

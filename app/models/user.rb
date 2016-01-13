@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :reviews
   has_many :queue_items, -> { order("position") }
+  has_many :following_relationships, class_name: "Relationship", foreign_key: :follower_id
+  has_many :leading_relationships, class_name: "Relationship", foreign_key: :leader_id
 
   has_secure_password validations: false
 
@@ -15,5 +17,13 @@ class User < ActiveRecord::Base
 
   def include_video_in_queue?(video)
     queue_items.map(&:video).include?(video)
+  end
+
+  def follows?(another_user)
+    following_relationships.map(&:leader).include?(another_user)
+  end
+
+  def can_follow?(another_user)
+    self.follows?(another_user) || another_user == self
   end
 end
