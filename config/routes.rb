@@ -25,4 +25,11 @@ Myflix::Application.routes.draw do
   delete '/unfollow', to: 'users#unfollow'
   resources :relationships, only: [:create, :destroy]
   get '/people', to: 'relationships#index'
+
+  get '/forgot_password', to: 'forgot_passwords#new'
+  resources :forgot_passwords, only: [:create]
+  get '/forgot_password_confirmation', to: 'forgot_passwords#confirm'
+
+  resources :password_resets, only: [:show, :create]
+  get '/expired_token', to: 'password_resets#expired_token'
 end

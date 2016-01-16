@@ -39,6 +39,7 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
+    bootstrap_form (2.3.0)
     builder (3.2.2)
     capybara (2.5.0)
       mime-types (>= 1.16)
@@ -79,6 +80,8 @@ GEM
     json (1.8.1)
     launchy (2.4.3)
       addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -181,6 +184,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass (= 3.1.1.1)
+  bootstrap_form
   capybara
   coffee-rails
   database_cleaner (= 1.4.1)
@@ -189,6 +193,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   launchy
+  letter_opener
   pg
   pry
   pry-nav
