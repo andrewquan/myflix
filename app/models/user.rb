@@ -30,4 +30,8 @@ class User < ActiveRecord::Base
   def generate_token
     self.update_column(:token, SecureRandom.urlsafe_base64)
   end
+
+  def follow(another_user)
+    following_relationships.create(leader: another_user) unless can_follow?(another_user)
+  end
 end
