@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    flash[:notice] = "Please sign out in order to register a new user."
     redirect_to home_path if current_user
   end
 

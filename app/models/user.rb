@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   end
 
   def can_follow?(another_user)
-    self.follows?(another_user) || another_user == self
+    !(self.follows?(another_user) || another_user == self)
   end
 
   def generate_token
@@ -32,6 +32,6 @@ class User < ActiveRecord::Base
   end
 
   def follow(another_user)
-    following_relationships.create(leader: another_user) unless can_follow?(another_user)
+    following_relationships.create(leader: another_user) if can_follow?(another_user)
   end
 end
