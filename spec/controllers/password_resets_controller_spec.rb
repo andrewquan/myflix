@@ -24,31 +24,25 @@ describe PasswordResetsController do
 
   describe "POST create" do
     context "with valid token" do
-      it "updates the user's password" do
-        alice = Fabricate(:user, password: 'password')
+      let(:alice) { alice = Fabricate(:user, password: 'password') }
+      before { 
         alice.generate_token
         post :create, token: alice.token, password: 'new_password'
+      }
+
+      it "updates the user's password" do
         expect(alice.reload.authenticate('new_password')).to be_truthy
       end
 
       it "redirects to the sign in page" do
-        alice = Fabricate(:user, password: 'password')
-        alice.generate_token
-        post :create, token: alice.token, password: 'new_password'
         expect(response).to redirect_to sign_in_path
       end
 
       it "sets the flash success" do
-        alice = Fabricate(:user, password: 'password')
-        alice.generate_token
-        post :create, token: alice.token, password: 'new_password'
         expect(flash[:success]).not_to be_blank
       end
 
       it "removes the user's token" do
-        alice = Fabricate(:user, password: 'password')
-        alice.generate_token
-        post :create, token: alice.token, password: 'new_password'
         expect(alice.reload.token).to be_nil
       end
     end
