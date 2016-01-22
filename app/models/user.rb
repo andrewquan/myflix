@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  include Tokenable
-
   has_many :reviews
   has_many :queue_items, -> { order("position") }
   has_many :following_relationships, class_name: "Relationship", foreign_key: :follower_id
@@ -31,5 +29,9 @@ class User < ActiveRecord::Base
 
   def follow(another_user)
     following_relationships.create(leader: another_user) if can_follow?(another_user)
+  end
+
+  def generate_token
+    self.update_column(:token, SecureRandom.urlsafe_base64)
   end
 end
