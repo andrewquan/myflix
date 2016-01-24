@@ -14,6 +14,8 @@ gem 'fabrication'
 gem 'faker'
 gem 'bootstrap_form'
 gem 'sidekiq'
+gem 'sinatra', :require => nil
+gem 'figaro'
 
 group :development do
   gem 'thin'
