@@ -16,6 +16,7 @@ gem 'bootstrap_form'
 gem 'sidekiq'
 gem 'sinatra', :require => nil
 gem 'figaro'
+gem 'puma'
 
 group :development do
   gem 'thin'
