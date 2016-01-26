@@ -10,10 +10,10 @@ deployment:
       - git push git@heroku.com:andrewquan-myflix.git $CIRCLE_SHA1:refs/heads/master
       - heroku run rake db:migrate --app andrewquan-myflix
       - heroku maintenance:off --app andrewquan-myflix
-  # staging:
-  #   branch: staging
-  #   commands:
-  #     - heroku maintenance:on --app safe-ocean-50202
-  #     - git push git@heroku.com:safe-ocean-50202.git $CIRCLE_SHA1:refs/heads/master
-  #     - heroku run rake db:migrate --app safe-ocean-50202
-  #     - heroku maintenance:off --app safe-ocean-50202
+  staging:
+    branch: staging
+    commands:
+      - heroku maintenance:on --app andrewquan-myflix-staging
+      - git push git@heroku.com:andrewquan-myflix-staging.git $CIRCLE_SHA1:refs/heads/master
+      - heroku run rake db:migrate --app andrewquan-myflix-staging
+      - heroku maintenance:off --app andrewquan-myflix-staging
