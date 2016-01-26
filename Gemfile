@@ -17,6 +17,7 @@ gem 'sidekiq'
 gem 'sinatra', :require => nil
 gem 'figaro'
 gem 'puma'
+gem 'sentry-raven'
 
 group :development do
   gem 'thin'
@@ -40,7 +41,7 @@ group :test do
   gem 'capybara-email'
 end
 
-group :production do
+group :production, :staging do
   gem 'rails_12factor'
 end
 
