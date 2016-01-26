@@ -3,7 +3,7 @@ machine:
     version: 2.1.2
 deployment:
   production:
-    branch: master
+    branch: production
     commands:
       - heroku maintenance:on --app andrewquan-myflix
       - heroku pg:backups capture --app andrewquan-myflix
