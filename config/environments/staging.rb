@@ -1,17 +1,34 @@
-require 'rubygems' if RUBY_VERSION < '1.9'
-require 'rest_client'
-require 'json'
+Myflix::Application.configure do
 
-response = RestClient::Resource.new("https://mailtrap.io/api/v1/inboxes.json?api_token=#{ENV['MAILTRAP_API_TOKEN']}", ssl_version: "TLSv1").get
+  config.cache_classes = true
+  config.eager_load = true
+  config.consider_all_requests_local       = false
+  config.action_controller.perform_caching = true
 
-first_inbox = JSON.parse(response)[0]
+  config.serve_static_assets = false
 
-ActionMailer::Base.delivery_method = :smtp
-ActionMailer::Base.smtp_settings = {
-:user_name => first_inbox['username'],
-:password => first_inbox['password'],
-:address => first_inbox['domain'],
-:domain => first_inbox['domain'],
-:port => first_inbox['smtp_ports'][0],
-:authentication => :plain
-}
+  config.assets.compress = true
+  config.assets.js_compressor = :uglifier
+
+  config.assets.compile = false
+
+  config.assets.digest = true
+
+  config.i18n.fallbacks = true
+
+  config.active_support.deprecation = :notify
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.default_url_options = { host: 'andrewquan-myflix-staging.herokuapp.com'}
+
+  ActionMailer::Base.smtp_settings = {
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => 'andrewquan-myflix-staging.herokuapp.com',
+    :authentication => :plain,
+  }
+  ActionMailer::Base.delivery_method = :smtp
+end
