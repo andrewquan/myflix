@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
     if @user.save
       handle_invitation
-      AppMailer.delay.send_welcome_email(@user)
+      AppMailer.delay.send_welcome_email(@user.id)
       flash[:notice] = "You're now registered!"
       redirect_to sign_in_path
     else

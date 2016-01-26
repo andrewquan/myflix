@@ -7,7 +7,7 @@ class ForgotPasswordsController < ApplicationController
 
     if user
       user.generate_token
-      AppMailer.delay.send_forgot_password(user)
+      AppMailer.delay.send_forgot_password(user.id)
       redirect_to forgot_password_confirmation_path
     else
       flash[:error] = params[:email].blank? ? "Email cannot be blank." : "No account is associated with that email address. Please try again."
