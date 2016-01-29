@@ -7,7 +7,6 @@ deployment:
     commands:
       - heroku maintenance:on --app andrewquan-myflix
       - heroku pg:backups capture --app andrewquan-myflix
-      - git fetch origin --unshallow
       - git push git@heroku.com:andrewquan-myflix.git $CIRCLE_SHA1:refs/heads/master
       - heroku run rake db:migrate --app andrewquan-myflix
       - heroku maintenance:off --app andrewquan-myflix
@@ -15,7 +14,6 @@ deployment:
     branch: staging
     commands:
       - heroku maintenance:on --app andrewquan-myflix-staging
-      - git fetch origin --unshallow
       - git push git@heroku.com:andrewquan-myflix-staging.git $CIRCLE_SHA1:refs/heads/master
       - heroku run rake db:migrate --app andrewquan-myflix-staging
       - heroku maintenance:off --app andrewquan-myflix-staging
