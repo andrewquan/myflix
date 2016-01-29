@@ -7,7 +7,8 @@ describe UsersController do
       expect(assigns(:user)).to be_instance_of(User)
     end
 
-    it "sets flash notice" do
+    it "sets flash notice if logged in" do
+      set_current_user
       get :new
       expect(flash[:notice]).to be_present
     end
