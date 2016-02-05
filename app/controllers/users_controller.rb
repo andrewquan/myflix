@@ -3,8 +3,10 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    flash[:notice] = "Please sign out in order to register a new user."
-    redirect_to home_path if current_user
+    if current_user
+      flash[:notice] = "Please sign out in order to register a new user."
+      redirect_to home_path
+    end
   end
 
   def create
@@ -12,6 +14,19 @@ class UsersController < ApplicationController
 
     if @user.save
       handle_invitation
+      Stripe.api_key = ENV['STRIPE_SECRET_KEY']
+      begin
+        @amount = 999
+        charge = Stripe::Charge.create(
+          :source      => params[:stripeToken],
+          :amount      => @amount,
+          :description => 'MyFlix sign up charge',
+          :currency    => 'usd'
+        )
+
+      rescue Stripe::CardError => e
+        flash[:error] = e.message
+      end
       AppMailer.delay.send_welcome_email(@user.id)
       flash[:notice] = "You're now registered!"
       redirect_to sign_in_path
