@@ -43,6 +43,9 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'capybara-email'
+  gem 'webmock'
+  gem 'poltergeist'
+  gem 'selenium-webdriver'
 end
 
 group :production, :staging do

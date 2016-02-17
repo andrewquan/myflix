@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature "admin user adds a video" do
-  scenario "admin user adds a video" do
+  scenario "admin user adds a video", :vcr do
     comedy = Fabricate(:category, name: "Comedy")
 
     admin_sign_in
