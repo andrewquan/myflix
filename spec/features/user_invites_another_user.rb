@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature "User invites a user to join MyFlix" do
-  scenario "User successfully invites a friend and the invitation is accepted", { js: true, vcr: true } do
+  scenario "User successfully invites a friend and the invitation is accepted", :js, :vcr do
     alice = Fabricate(:user)
     sign_in(alice)
 

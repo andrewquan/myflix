@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "User registration", { js: true, vcr: true } do
+feature "User registration", :js, :vcr do
   background { visit register_path }
 
   scenario "with valid personal info and valid card" do

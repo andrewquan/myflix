@@ -26,11 +26,11 @@ class UsersController < ApplicationController
         flash[:notice] = "You're now registered!"
         redirect_to sign_in_path
       else
-        flash[:danger] = charge.error_message
+        flash.now[:danger] = charge.error_message
         render :new
       end
     else
-      flash[:danger] = "Invalid personal information. Please check the errors below."
+      flash.now[:danger] = "Invalid personal information. Please check the errors below."
       render :new
     end
   end

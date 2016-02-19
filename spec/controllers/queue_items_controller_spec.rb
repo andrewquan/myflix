@@ -155,7 +155,7 @@ describe QueueItemsController do
 
       it "gives a flash error" do
         post :update_queue, queue_items: [{id: queue_item1.id, position: 3.1}, {id: queue_item2.id, position: 2}]
-        expect(flash[:error]).not_to be_blank
+        expect(flash[:danger]).not_to be_blank
       end
 
       it "does not change any of the queue item positions even if one is valid" do

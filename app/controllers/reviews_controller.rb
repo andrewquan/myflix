@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     if review.save
       redirect_to video_path(@video)
     else
-      flash[:error] = "Please include some comments."
+      flash.now[:danger] = "Please include some comments."
       @reviews = @video.reviews.reload
       render 'videos/show'
     end

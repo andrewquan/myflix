@@ -6,8 +6,8 @@ def set_current_admin(admin=nil)
   session[:user_id] = (admin || Fabricate(:admin)).id
 end
 
-def sign_in(a_user=nil)
-  user = a_user || Fabricate(:user)
+def sign_in(user=nil)
+  user ||= Fabricate(:user)
   visit sign_in_path
   fill_in "Email Address", with: user.email
   fill_in "Password", with: user.password
@@ -15,7 +15,7 @@ def sign_in(a_user=nil)
 end
 
 def admin_sign_in(admin_user=nil)
-  admin = admin_user || Fabricate(:admin)
+  admin ||= Fabricate(:admin)
   visit sign_in_path
   fill_in "Email Address", with: admin.email
   fill_in "Password", with: admin.password

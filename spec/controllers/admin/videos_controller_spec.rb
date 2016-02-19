@@ -12,7 +12,7 @@ describe Admin::VideosController do
     it "sets the flash error for regular users" do
       set_current_user
       get :new
-      expect(flash[:error]).to be_present
+      expect(flash[:danger]).to be_present
     end
 
     it_behaves_like "requires admin" do
@@ -64,7 +64,7 @@ describe Admin::VideosController do
 
         it "sets the flash error" do
           post :create, video: { category_id: category.id, description: "Space travel."}
-          expect(flash[:error]).to be_present
+          expect(flash[:danger]).to be_present
         end
       end
     end

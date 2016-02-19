@@ -49,7 +49,7 @@ describe SessionsController do
       end
 
       it "gives a flash error notice" do
-        expect(flash[:error]).not_to be_blank
+        expect(flash[:danger]).not_to be_blank
       end
     end
   end

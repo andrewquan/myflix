@@ -10,7 +10,7 @@ describe ForgotPasswordsController do
 
       it "sets the flash error" do
         post :create, email: ""
-        expect(flash[:error]).to eq("Email cannot be blank.")
+        expect(flash[:danger]).to eq("Email cannot be blank.")
       end
     end
 
@@ -42,7 +42,7 @@ describe ForgotPasswordsController do
 
       it "sets the flash error" do
         post :create, email: "john@example.com"
-        expect(flash[:error]).to eq("No account is associated with that email address. Please try again.")
+        expect(flash[:danger]).to eq("No account is associated with that email address. Please try again.")
       end
     end
   end

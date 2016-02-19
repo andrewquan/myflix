@@ -9,7 +9,7 @@ class Video < ActiveRecord::Base
   mount_uploader :small_cover, SmallCoverUploader
 
   def self.search_by_title(search_term)
-    where("lower(title) LIKE ?", "%#{search_term}%".downcase).order("created_at DESC")
+    where("title ILIKE ?", "%#{search_term}%").order("created_at DESC")
   end
 
   def average_rating

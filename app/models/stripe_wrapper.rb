@@ -14,7 +14,7 @@ module StripeWrapper
           amount: options[:amount],
           description: options[:description],
           currency: 'usd'
-          )
+        )
         new(stripe_response: stripe_response)
       rescue Stripe::CardError => e
         new(error_message: e.message)

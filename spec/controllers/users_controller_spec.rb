@@ -106,9 +106,9 @@ describe UsersController do
       end
 
       it "does not send an email" do
+        ActionMailer::Base.deliveries.clear
         post :create, user: {email: 'john@example.com'}
         expect(ActionMailer::Base.deliveries).to be_empty
-        ActionMailer::Base.deliveries.clear
       end
     end
 
