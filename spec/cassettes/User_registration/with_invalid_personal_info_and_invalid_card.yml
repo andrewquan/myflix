@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&description=MyFlix+sign+up+charge&source=tok_17iaLuEUFDmIamtgsQFyhRCt
+      string: amount=999&currency=usd&description=MyFlix+sign+up+charge&source=tok_17ia81EUFDmIamtghxsyfa9J
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 26 Feb 2016 01:25:07 GMT
+      - Fri, 26 Feb 2016 01:10:47 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7yXQvxdgjndlxN
+      - req_7yXCWsMoenGkGx
       Stripe-Version:
       - '2015-10-16'
     body:
@@ -60,9 +60,9 @@ http_interactions:
             "message": "Your card was declined.",
             "type": "card_error",
             "code": "card_declined",
-            "charge": "ch_17iaLuEUFDmIamtg0DUh0pA2"
+            "charge": "ch_17ia82EUFDmIamtg73C9KlTr"
           }
         }
     http_version: 
-  recorded_at: Fri, 26 Feb 2016 01:25:06 GMT
+  recorded_at: Fri, 26 Feb 2016 01:10:46 GMT
 recorded_with: VCR 2.9.3

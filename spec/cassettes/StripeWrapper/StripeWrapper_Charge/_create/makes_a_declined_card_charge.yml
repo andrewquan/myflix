@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 17 Feb 2016 01:30:36 GMT
+      - Fri, 26 Feb 2016 01:10:56 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7vAUdIFvADP0ed
+      - req_7yXCUOVVLjiPVD
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_17fK9IEUFDmIamtgnjuL9i5D",
+          "id": "tok_17ia8CEUFDmIamtguAsXVeZs",
           "object": "token",
           "card": {
-            "id": "card_17fK9IEUFDmIamtg0Z02hcsP",
+            "id": "card_17ia8CEUFDmIamtgkVF9tdAc",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -85,19 +85,19 @@ http_interactions:
             "tokenization_method": null
           },
           "client_ip": "74.100.234.236",
-          "created": 1455672636,
+          "created": 1456449056,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Wed, 17 Feb 2016 01:30:36 GMT
+  recorded_at: Fri, 26 Feb 2016 01:10:56 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&description=MyFlix+sign+up+charge&source=tok_17fK9IEUFDmIamtgnjuL9i5D
+      string: amount=999&currency=usd&description=invalid+MyFlix+sign+up+charge&source=tok_17ia8CEUFDmIamtguAsXVeZs
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -114,7 +114,7 @@ http_interactions:
         MacBook-Pro.local 15.3.0 Darwin Kernel Version 15.3.0: Thu Dec 10 18:40:58
         PST 2015; root:xnu-3248.30.4~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro.local"}'
       Content-Length:
-      - '93'
+      - '101'
   response:
     status:
       code: 402
@@ -123,7 +123,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 17 Feb 2016 01:30:36 GMT
+      - Fri, 26 Feb 2016 01:10:57 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -141,7 +141,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7vAUgApJe4KEap
+      - req_7yXCCWVyfOG8Nz
       Stripe-Version:
       - '2015-10-16'
     body:
@@ -152,9 +152,9 @@ http_interactions:
             "message": "Your card was declined.",
             "type": "card_error",
             "code": "card_declined",
-            "charge": "ch_17fK9IEUFDmIamtgAv0LvKhL"
+            "charge": "ch_17ia8CEUFDmIamtgVKwdjtuC"
           }
         }
     http_version: 
-  recorded_at: Wed, 17 Feb 2016 01:30:37 GMT
+  recorded_at: Fri, 26 Feb 2016 01:10:56 GMT
 recorded_with: VCR 2.9.3

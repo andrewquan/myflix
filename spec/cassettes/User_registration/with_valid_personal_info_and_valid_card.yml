@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&description=MyFlix+sign+up+charge&source=tok_17fKlLEUFDmIamtgXBL6Mgym
+      string: amount=999&currency=usd&description=MyFlix+sign+up+charge&source=tok_17ia87EUFDmIamtgAYM60jGF
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 17 Feb 2016 02:09:56 GMT
+      - Fri, 26 Feb 2016 01:10:51 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7vB7GiDrQFmCfs
+      - req_7yXC8e0MbFgJRx
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -58,14 +58,14 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_17fKlLEUFDmIamtgw1muU111",
+          "id": "ch_17ia87EUFDmIamtg85yR201P",
           "object": "charge",
           "amount": 999,
           "amount_refunded": 0,
           "application_fee": null,
-          "balance_transaction": "txn_17fKlLEUFDmIamtg46fnEz6c",
+          "balance_transaction": "txn_17ia87EUFDmIamtgR34y0ACO",
           "captured": true,
-          "created": 1455674995,
+          "created": 1456449051,
           "currency": "usd",
           "customer": null,
           "description": "MyFlix sign up charge",
@@ -87,11 +87,11 @@ http_interactions:
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/charges/ch_17fKlLEUFDmIamtgw1muU111/refunds"
+            "url": "/v1/charges/ch_17ia87EUFDmIamtg85yR201P/refunds"
           },
           "shipping": null,
           "source": {
-            "id": "card_17fKlLEUFDmIamtg3ZapAxNa",
+            "id": "card_17ia87EUFDmIamtgumRBzGEf",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -119,5 +119,5 @@ http_interactions:
           "status": "succeeded"
         }
     http_version: 
-  recorded_at: Wed, 17 Feb 2016 02:09:56 GMT
+  recorded_at: Fri, 26 Feb 2016 01:10:52 GMT
 recorded_with: VCR 2.9.3

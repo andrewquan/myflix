@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&description=MyFlix+sign+up+charge&source=tok_17iaLuEUFDmIamtgsQFyhRCt
+      string: amount=999&currency=usd&description=MyFlix+sign+up+charge
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -22,20 +22,20 @@ http_interactions:
         MacBook-Pro.local 15.3.0 Darwin Kernel Version 15.3.0: Thu Dec 10 18:40:58
         PST 2015; root:xnu-3248.30.4~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro.local"}'
       Content-Length:
-      - '93'
+      - '57'
   response:
     status:
-      code: 402
-      message: Payment Required
+      code: 400
+      message: Bad Request
     headers:
       Server:
       - nginx
       Date:
-      - Fri, 26 Feb 2016 01:25:07 GMT
+      - Fri, 26 Feb 2016 01:24:58 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '162'
+      - '108'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7yXQvxdgjndlxN
+      - req_7yXQmjI15IkPeT
       Stripe-Version:
       - '2015-10-16'
     body:
@@ -57,12 +57,10 @@ http_interactions:
       string: |
         {
           "error": {
-            "message": "Your card was declined.",
-            "type": "card_error",
-            "code": "card_declined",
-            "charge": "ch_17iaLuEUFDmIamtg0DUh0pA2"
+            "type": "invalid_request_error",
+            "message": "Must provide source or customer."
           }
         }
     http_version: 
-  recorded_at: Fri, 26 Feb 2016 01:25:06 GMT
+  recorded_at: Fri, 26 Feb 2016 01:24:58 GMT
 recorded_with: VCR 2.9.3
