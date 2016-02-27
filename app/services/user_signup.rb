@@ -5,7 +5,7 @@ class UserSignup
     @user = user
   end
 
-  def sign_up(stripe_token, invitation_token)
+  def sign_up(stripe_token, invitation_token=nil)
     if @user.valid?
       charge = StripeWrapper::Charge.create(
         source: stripe_token,
@@ -17,17 +17,15 @@ class UserSignup
         handle_invitation(invitation_token)
         AppMailer.delay.send_welcome_email(@user.id)
         @status = :success
-        self
       else
         @status = :failed
         @error_message = charge.error_message
-        self
       end
     else
       @status = :failed
       @error_message = "Invalid personal information. Please check the errors below."
-      self
     end
+    self
   end
 
   def successful?

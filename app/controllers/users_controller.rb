@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       flash[:notice] = "You're now registered!"
       redirect_to sign_in_path
     else
-      flash[:danger] = result.error_message
+      flash.now[:danger] = result.error_message
       render :new
     end
   end

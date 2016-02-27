@@ -11,4 +11,10 @@ class Video < ActiveRecord::Base
   def self.search_by_title(search_term)
     where("title ILIKE ?", "%#{search_term}%").order("created_at DESC")
   end
+
+  def average_rating
+    arr = self.reviews.map {|review| review.rating }
+    average = arr.inject(0.0) {|sum, n| sum + n} / arr.size   
+    average.round(1)
+  end
 end
