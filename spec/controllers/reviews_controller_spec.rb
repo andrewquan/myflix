@@ -55,7 +55,7 @@ describe ReviewsController do
         it "gives a flash error" do
           review = Fabricate(:review, video: video)
           post :create, review: {rating: 5}, video_id: video.id
-          expect(flash[:error]).not_to be_blank
+          expect(flash[:danger]).not_to be_blank
         end
       end
     end

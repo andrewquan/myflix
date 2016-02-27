@@ -1,5 +1,5 @@
 class InvitationsController < ApplicationController
-  before_filter :require_user
+  before_action :require_user
 
   def new
     @invitation = Invitation.new
@@ -13,7 +13,7 @@ class InvitationsController < ApplicationController
       flash[:success] = "Your invitation to #{@invitation.recipient_name} was sent!"
       redirect_to new_invitation_path
     else
-      flash[:error] = "Please check your inputs."
+      flash.now[:error] = "Please check your inputs."
       render :new
     end
   end

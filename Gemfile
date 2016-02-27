@@ -18,6 +18,11 @@ gem 'sinatra', :require => nil
 gem 'figaro'
 gem 'puma'
 gem 'sentry-raven'
+gem 'carrierwave'
+gem 'carrierwave-aws'
+gem 'mini_magick'
+gem 'stripe'
+gem 'draper'
 
 group :development do
   gem 'thin'
@@ -39,6 +44,9 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'capybara-email'
+  gem 'webmock'
+  gem 'poltergeist'
+  gem 'selenium-webdriver'
 end
 
 group :production, :staging do

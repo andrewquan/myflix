@@ -1,5 +1,5 @@
 class QueueItemsController < ApplicationController
-  before_filter :require_user
+  before_action :require_user
 
   def index
     @queue_items = current_user.queue_items
@@ -23,7 +23,7 @@ class QueueItemsController < ApplicationController
     update_queue_item
     current_user.normalize_queue_item_positions
     rescue ActiveRecord::RecordInvalid
-      flash[:error] = "Invalid position numbers."
+      flash[:danger] = "Invalid position numbers."
     end
     redirect_to my_queue_path
   end

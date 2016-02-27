@@ -8,6 +8,11 @@ Myflix::Application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
   root to: 'pages#front'
   get 'ui(/:action)', controller: 'ui'
+
+  namespace :admin do
+    resources :videos, only: [:new, :create]
+  end
+
   get '/home', to: 'videos#index'
 
   get '/register', to: 'users#new'

@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_filter :require_user
+  before_action :require_user
 
   def create
     @video = Video.find(params[:video_id])
@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     if review.save
       redirect_to video_path(@video)
     else
-      flash[:error] = "Please include some comments."
+      flash.now[:danger] = "Please include some comments."
       @reviews = @video.reviews.reload
       render 'videos/show'
     end
