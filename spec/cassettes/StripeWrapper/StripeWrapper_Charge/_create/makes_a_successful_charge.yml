@@ -19,8 +19,8 @@ http_interactions:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
       - '{"bindings_version":"1.35.0","lang":"ruby","lang_version":"2.1.2 p95 (2014-05-08)","platform":"x86_64-darwin13.0","engine":"ruby","publisher":"stripe","uname":"Darwin
-        MacBook-Pro.local 15.3.0 Darwin Kernel Version 15.3.0: Thu Dec 10 18:40:58
-        PST 2015; root:xnu-3248.30.4~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro.local"}'
+        MacBook-Pro-2.local 15.3.0 Darwin Kernel Version 15.3.0: Thu Dec 10 18:40:58
+        PST 2015; root:xnu-3248.30.4~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-2.local"}'
       Content-Length:
       - '81'
   response:
@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 26 Feb 2016 01:10:53 GMT
+      - Fri, 18 Mar 2016 20:21:43 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7yXCFdiAHRlD5d
+      - req_86hVpYb2E8IqYq
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_17ia89EUFDmIamtg3PpPmirx",
+          "id": "tok_17qU6NEUFDmIamtgMGtu11bI",
           "object": "token",
           "card": {
-            "id": "card_17ia89EUFDmIamtgAFOls7HH",
+            "id": "card_17qU6NEUFDmIamtgeqCJcnfl",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -84,20 +84,20 @@ http_interactions:
             "name": null,
             "tokenization_method": null
           },
-          "client_ip": "74.100.234.236",
-          "created": 1456449053,
+          "client_ip": "115.65.255.225",
+          "created": 1458332503,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Fri, 26 Feb 2016 01:10:53 GMT
+  recorded_at: Fri, 18 Mar 2016 20:21:43 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&description=MyFlix+sign+up+charge&source=tok_17ia89EUFDmIamtg3PpPmirx
+      string: amount=999&currency=usd&description=MyFlix+sign+up+charge&source=tok_17qU6NEUFDmIamtgMGtu11bI
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -111,8 +111,8 @@ http_interactions:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
       - '{"bindings_version":"1.35.0","lang":"ruby","lang_version":"2.1.2 p95 (2014-05-08)","platform":"x86_64-darwin13.0","engine":"ruby","publisher":"stripe","uname":"Darwin
-        MacBook-Pro.local 15.3.0 Darwin Kernel Version 15.3.0: Thu Dec 10 18:40:58
-        PST 2015; root:xnu-3248.30.4~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro.local"}'
+        MacBook-Pro-2.local 15.3.0 Darwin Kernel Version 15.3.0: Thu Dec 10 18:40:58
+        PST 2015; root:xnu-3248.30.4~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-2.local"}'
       Content-Length:
       - '93'
   response:
@@ -123,11 +123,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 26 Feb 2016 01:10:54 GMT
+      - Fri, 18 Mar 2016 20:21:44 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1459'
+      - '1486'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -141,7 +141,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7yXC6La2pxDtfq
+      - req_86hVjweHieaLpW
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -150,14 +150,14 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_17ia8AEUFDmIamtg5bI56QCd",
+          "id": "ch_17qU6OEUFDmIamtgevrIwO40",
           "object": "charge",
           "amount": 999,
           "amount_refunded": 0,
           "application_fee": null,
-          "balance_transaction": "txn_17ia8AEUFDmIamtgn4NyRx6d",
+          "balance_transaction": "txn_17qU6OEUFDmIamtgsr1gBnJF",
           "captured": true,
-          "created": 1456449054,
+          "created": 1458332504,
           "currency": "usd",
           "customer": null,
           "description": "MyFlix sign up charge",
@@ -179,11 +179,11 @@ http_interactions:
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/charges/ch_17ia8AEUFDmIamtg5bI56QCd/refunds"
+            "url": "/v1/charges/ch_17qU6OEUFDmIamtgevrIwO40/refunds"
           },
           "shipping": null,
           "source": {
-            "id": "card_17ia89EUFDmIamtgAFOls7HH",
+            "id": "card_17qU6NEUFDmIamtgeqCJcnfl",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -207,9 +207,10 @@ http_interactions:
             "name": null,
             "tokenization_method": null
           },
+          "source_transfer": null,
           "statement_descriptor": null,
           "status": "succeeded"
         }
     http_version: 
-  recorded_at: Fri, 26 Feb 2016 01:10:55 GMT
+  recorded_at: Fri, 18 Mar 2016 20:21:44 GMT
 recorded_with: VCR 2.9.3
